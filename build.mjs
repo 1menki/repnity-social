@@ -9,16 +9,33 @@
 //     { "text": "track every single set.", "layout": "app", "app": "coach", "query": "gym bench dark" } ] } ] }
 import { bundle } from '@remotion/bundler';
 import { renderStill, selectComposition } from '@remotion/renderer';
+import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
-const env = Object.fromEntries(
-  fs.readFileSync(path.join(ROOT, '.env'), 'utf8').split('\n').filter((l) => l.includes('=')).map((l) => [l.slice(0, l.indexOf('=')).trim(), l.slice(l.indexOf('=') + 1).trim()]),
+const envFile = path.join(ROOT, '.env');
+const env = !fs.existsSync(envFile) ? {} : Object.fromEntries(
+  fs.readFileSync(envFile, 'utf8').split('\n').filter((l) => l.includes('=')).map((l) => [l.slice(0, l.indexOf('=')).trim(), l.slice(l.indexOf('=') + 1).trim()]),
 );
 const KEY = env.PIXABAY_API_KEY || env.PEXELS_API_KEY;
 const PROVIDER = env.PIXABAY_API_KEY ? 'pixabay' : 'pexels';
-if (!KEY) throw new Error('PIXABAY_API_KEY (oder PEXELS_API_KEY) fehlt in .env');
+// Eigene Bildergalerie (Standard): Ordner aus GALLERY_DIR oder ./gallery. Wird nie ins Repo geladen.
+const GALLERY = env.GALLERY_DIR || path.join(ROOT, 'gallery');
+const MIME = { '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp', '.heic': 'image/heic' };
+const galleryImage = (file) => {
+  const f = path.join(GALLERY, file);
+  if (!fs.existsSync(f)) throw new Error(`Bild nicht in der Galerie: ${file}`);
+  used.add(`g:${file}`);
+  // iPhone-Fotos (HEIC) kann der Renderer nicht lesen → einmal per sips nach JPG wandeln
+  if (/\.heic$/i.test(f)) {
+    const jpg = path.join(ROOT, 'work', `${path.basename(f)}.jpg`);
+    fs.mkdirSync(path.dirname(jpg), { recursive: true });
+    if (!fs.existsSync(jpg)) execFileSync('sips', ['-s', 'format', 'jpeg', '-Z', '2400', f, '--out', jpg]);
+    return { id: file, src: `data:image/jpeg;base64,${fs.readFileSync(jpg).toString('base64')}`, by: 'own', url: '' };
+  }
+  return { id: file, src: `data:${MIME[path.extname(f).toLowerCase()] || 'image/jpeg'};base64,${fs.readFileSync(f).toString('base64')}`, by: 'own', url: '' };
+};
 
 const planFile = process.argv[2];
 const plan = JSON.parse(fs.readFileSync(planFile, 'utf8'));
@@ -65,7 +82,12 @@ for (const post of plan.posts) {
   fs.mkdirSync(dir, { recursive: true });
   const credits = [];
   for (const [i, s] of post.slides.entries()) {
-    const photos = await photosFor(s.query, s.layout === 'collage' ? 4 : 1);
+    // Slide nennt Galerie-Bilder ("image": "datei.jpg" oder Liste) – sonst Stockfoto-Suche ("query")
+    const photos = s.image
+      ? [s.image].flat().map(galleryImage)
+      : KEY
+        ? await photosFor(s.query, s.layout === 'collage' ? 4 : 1)
+        : (() => { throw new Error(`Slide ${i + 1} von ${post.id}: weder "image" noch Stockfoto-Schlüssel`); })();
     credits.push(...photos.map((p) => ({ slide: i + 1, photographer: p.by, url: p.url })));
     const app = s.app ? `data:image/png;base64,${fs.readFileSync(path.join(ROOT, 'assets/app', `${s.app}.png`)).toString('base64')}` : undefined;
     const output = path.join(dir, `${String(i + 1).padStart(2, '0')}.jpg`);

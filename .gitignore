@@ -2,3 +2,5 @@
 .env
 node_modules/
 work/
+gallery/
+gallery-index.json

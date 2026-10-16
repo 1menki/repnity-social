@@ -1,36 +1,89 @@
 {
-  "posts": [
+ "posts": [
+  {
+   "id": "2026-10-18-winter-arc-pt2",
+   "caption": "save this for the next 3 months #winterarc #gymtok #gym #discipline #selfimprovement",
+   "slides": [
     {
-      "id": "2026-10-18-winter-arc-pt2",
-      "caption": "save this for the next 3 months #winterarc #gymtok #gym #discipline #selfimprovement",
-      "slides": [
-        { "text": "winter arc rules pt. 2", "layout": "collage", "query": "dark gym night" },
-        { "text": "no skipped mondays. ever.", "query": "dark morning alarm", "position": "middle" },
-        { "text": "same plan for 12 weeks.\nno program hopping.", "query": "barbell rack dark gym" },
-        { "text": "track every single set.", "layout": "app", "app": "coach", "query": "gym bench dark" },
-        { "text": "8 hours of sleep.\nnon-negotiable.", "query": "dark bedroom night" },
-        { "text": "you'll thank yourself in march.", "query": "man silhouette winter fog" }
-      ]
+     "text": "winter arc rules pt. 2",
+     "layout": "collage",
+     "image": [
+      "IMG_3013.JPG",
+      "IMG_3014.JPG",
+      "IMG_3016.JPG",
+      "IMG_2658.JPG"
+     ]
     },
     {
-      "id": "2026-10-19-notebook-meme",
-      "caption": "the notebook guy is a legend tho 😭 #gymtok #gymhumor #gymbro #relatable",
-      "slides": [
-        { "text": "when the guy next to you still writes his sets in a notebook like it's 2009", "query": "gym dumbbells dark", "position": "top" },
-        { "text": "me letting my app tell me exactly what to lift today", "layout": "app", "app": "coach", "query": "gym weights dark" }
-      ]
+     "text": "no skipped mondays. ever.",
+     "image": "IMG_2950.JPG"
     },
     {
-      "id": "2026-10-20-first-8-weeks",
-      "caption": "if you're in week 2 right now, don't quit #gymtok #gymmotivation #beginner #selfimprovement",
-      "slides": [
-        { "text": "nobody tells you this about your first 8 weeks in the gym", "query": "empty gym dark", "position": "top" },
-        { "text": "week 1:\nyou're sore in places you didn't know existed", "query": "tired athlete sitting gym" },
-        { "text": "week 3:\nyou stop caring if people watch", "query": "gym mirror dark" },
-        { "text": "week 6:\nthe weights finally start moving", "query": "deadlift barbell dark" },
-        { "text": "week 8:\nskipping feels worse than going", "query": "gym at night window" },
-        { "text": "track it, so you can actually see it.", "layout": "app", "app": "progress", "query": "gym floor dark" }
-      ]
+     "text": "same plan for 12 weeks.\nno program hopping.",
+     "image": "IMG_2529.JPG"
+    },
+    {
+     "text": "track every single set.",
+     "image": "IMG_3083.PNG",
+     "position": "top"
+    },
+    {
+     "text": "8 hours of sleep.\nnon-negotiable.",
+     "image": "IMG_2640.JPG"
+    },
+    {
+     "text": "you'll thank yourself in march.",
+     "image": "IMG_3015.JPG"
     }
-  ]
+   ]
+  },
+  {
+   "id": "2026-10-19-notebook-meme",
+   "caption": "the notebook guy is a legend tho 😭 #gymtok #gymhumor #gymbro #relatable",
+   "slides": [
+    {
+     "text": "when the guy next to you still writes his sets in a notebook like it's 2009",
+     "image": "IMG_3091.JPG",
+     "position": "top"
+    },
+    {
+     "text": "me letting my app tell me exactly what to lift today",
+     "image": "IMG_3071.PNG",
+     "position": "top"
+    }
+   ]
+  },
+  {
+   "id": "2026-10-20-first-8-weeks",
+   "caption": "if you're in week 2 right now, don't quit #gymtok #gymmotivation #beginner #selfimprovement",
+   "slides": [
+    {
+     "text": "nobody tells you this about your first 8 weeks in the gym",
+     "image": "IMG_2894.jpg",
+     "position": "top"
+    },
+    {
+     "text": "week 1:\nyou're sore in places you didn't know existed",
+     "image": "IMG_2531.JPG"
+    },
+    {
+     "text": "week 3:\nyou stop caring if people watch",
+     "image": "IMG_2545.JPG"
+    },
+    {
+     "text": "week 6:\nthe weights finally start moving",
+     "image": "IMG_2530.JPG"
+    },
+    {
+     "text": "week 8:\nskipping feels worse than going",
+     "image": "IMG_3014.JPG"
+    },
+    {
+     "text": "track it, so you can actually see it.",
+     "image": "65DED43D-29D3-4C22-8D9F-83A64C5800B8.PNG",
+     "position": "top"
+    }
+   ]
+  }
+ ]
 }
