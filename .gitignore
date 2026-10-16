@@ -1,4 +1,4 @@
+*.log
 .env
 node_modules/
 work/
-*.log

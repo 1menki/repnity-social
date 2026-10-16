@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": "2026-10-18-winter-arc-pt2",
+      "caption": "save this for the next 3 months #winterarc #gymtok #gym #discipline #selfimprovement",
+      "slides": [
+        { "text": "winter arc rules pt. 2", "layout": "collage", "query": "dark gym night" },
+        { "text": "no skipped mondays. ever.", "query": "dark morning alarm", "position": "middle" },
+        { "text": "same plan for 12 weeks.\nno program hopping.", "query": "barbell rack dark gym" },
+        { "text": "track every single set.", "layout": "app", "app": "coach", "query": "gym bench dark" },
+        { "text": "8 hours of sleep.\nnon-negotiable.", "query": "dark bedroom night" },
+        { "text": "you'll thank yourself in march.", "query": "man silhouette winter fog" }
+      ]
+    },
+    {
+      "id": "2026-10-19-notebook-meme",
+      "caption": "the notebook guy is a legend tho 😭 #gymtok #gymhumor #gymbro #relatable",
+      "slides": [
+        { "text": "when the guy next to you still writes his sets in a notebook like it's 2009", "query": "gym dumbbells dark", "position": "top" },
+        { "text": "me letting my app tell me exactly what to lift today", "layout": "app", "app": "coach", "query": "gym weights dark" }
+      ]
+    },
+    {
+      "id": "2026-10-20-first-8-weeks",
+      "caption": "if you're in week 2 right now, don't quit #gymtok #gymmotivation #beginner #selfimprovement",
+      "slides": [
+        { "text": "nobody tells you this about your first 8 weeks in the gym", "query": "empty gym dark", "position": "top" },
+        { "text": "week 1:\nyou're sore in places you didn't know existed", "query": "tired athlete sitting gym" },
+        { "text": "week 3:\nyou stop caring if people watch", "query": "gym mirror dark" },
+        { "text": "week 6:\nthe weights finally start moving", "query": "deadlift barbell dark" },
+        { "text": "week 8:\nskipping feels worse than going", "query": "gym at night window" },
+        { "text": "track it, so you can actually see it.", "layout": "app", "app": "progress", "query": "gym floor dark" }
+      ]
+    }
+  ]
+}
